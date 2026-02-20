@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ゲーム検索</title>
+  <link rel="Stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="title">ゲーム検索（CheapShark）</h1>
+    <div class="form-container">
+       <form method="get" class="search-form">
+            <input type="text" name="q" value="{{ query }}" placeholder="英語でゲーム名を入力">
+            <button type="submit" class="search-button">
+                <img src="{% static 'img/search.png' %}" alt="検索">
+            </button>
+        </form>
+    </div>
+    <hr>
+    <main class="content">
+        {% if games %}
+            <div class="game-grid">
+                {% for game in games %}
+                <div class="game-card">
+                    <div class="image-wrapper">
+                        <img src="{{ game.thumb }}" alt="{{ game.external}}">
+                    </div>
+                    <h2>{{ game.external }}</h2>
+                    <p>最安値:$ {{ game.cheapest }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        {% elif query %}
+            <p class="no-results">検索結果がありません</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>データ提供元：<a href="https://www.cheapshark.com/">CheapShark</a></p>
+    </footer>
+</body>
+</html>

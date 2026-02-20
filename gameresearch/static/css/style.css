@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    color: black;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 5px auto 20px;
+    background-color: violet;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 5px auto 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    max-width: 380px;   /* 入力欄を横に広げる */
+    height: 30px;       /* 高さを出す */
+    font-size: 1rem;    /* 文字を大きく */
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid #666;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    height: 44px;
+    font-size: 1rem;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid #666;
+}
+
+/* 入力欄のフォーカス枠を消す */
+.search-form input[type="text"]:focus {
+    outline: none;              /* ブラウザ標準を消す */
+    border-color: black;        /* 枠はそのまま */
+}
+
+.search-button {
+    height: 44px;
+    width: 48px;
+    border: 2px solid black;   /* ← 黒い枠 */ 
+    background-color: white;
+    border-radius: 6px;
+    margin-left: 5px;   
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 検索結果のグリッド */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列 */
+    gap: 20px;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* カード */
+.game-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* 画像 */
+.game-card img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* タイトル */
+.game-card h2 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* 値段 */
+.game-card p {
+    font-weight: bold;
+}
+
+.no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: aquamarine;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 180px;      /* ここで高さ統一 */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* トリミングして揃える */
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .title {
+        width: 90%;
+        margin: 5px auto 20px;
+        font-size: 1.5em;
+    }
+    .form-container {
+        padding: 10px;
+        width: 90%;
+        margin: 5px auto 10px;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr); /* タブレット：2列 */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* スマホ：1列 */
+    }
+}
