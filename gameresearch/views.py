@@ -12,7 +12,6 @@ class IndexView(View):
             url = "https://www.cheapshark.com/api/1.0/games"
             params = {
                 "title": query,
-                "limit": 10,
             }
             res = requests.get(url, params=params, timeout=10)
             games = res.json()
