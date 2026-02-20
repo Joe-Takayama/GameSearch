@@ -1,0 +1,5 @@
+Django>=5.0
+requests
+python-dotenv
+gunicorn
+whitenoise
