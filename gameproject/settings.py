@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-o_623kw17au-m@+0ayn+$f*ftk7rwfn9t47qwvoool9x%6nyrt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-RAWG_API_KEY = os.getenv("RAWG_API_KEY")
-# Application definition
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
