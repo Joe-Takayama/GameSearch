@@ -8,7 +8,11 @@
   <link rel="Stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1 class="title">ゲーム検索（CheapShark）</h1>
+    <h1 class="title">
+        <a href="{% url 'gameresearch:index' %}" class="title-link">
+            ゲーム検索（CheapShark）
+        </a>
+    </h1>
     <div class="form-container">
        <form method="get" class="search-form">
             <input type="text" name="q" value="{{ query }}" placeholder="英語でゲーム名を入力">

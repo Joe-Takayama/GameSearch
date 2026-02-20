@@ -29,6 +29,11 @@ body {
     margin-bottom: 10px;
 }
 
+.title-link {
+    color: black;
+    text-decoration: none;
+}
+
 .form-container {
     width: 100%;
     max-width: 500px;
